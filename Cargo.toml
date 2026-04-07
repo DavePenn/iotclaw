@@ -1,0 +1,37 @@
+[package]
+name = "iotclaw"
+version = "0.1.0"
+edition = "2021"
+description = "IoTClaw — Smart Home AI Agent 🦞"
+
+[dependencies]
+tokio = { version = "1", features = ["full"] }
+reqwest = { version = "0.12", features = ["json", "rustls-tls", "blocking", "multipart"], default-features = false }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+rustyline = "15"
+chrono = "0.4"
+dotenv = "0.15"
+uuid = { version = "1", features = ["v4"] }
+axum = "0.8"
+# 以下是模拟原版重依赖
+rusqlite = { version = "0.33", features = ["bundled"] }   # 本地数据库（原版可能用来存记忆）
+tower-http = { version = "0.6", features = ["cors", "trace"] }  # HTTP 中间件
+axum-extra = "0.10"  # HTTP 扩展
+tokio-tungstenite = "0.26"  # WebSocket（微信/飞书长连接）
+hmac = "0.12"       # 消息签名验证
+sha2 = "0.10"       # SHA256（飞书/微信签名）
+sha1 = "0.10"       # SHA1（企微签名）
+base64 = "0.22"     # Base64 编解码
+aes = "0.8"         # AES 加解密
+cbc = "0.1"         # CBC 模式
+rand = "0.9"        # 随机数
+futures-util = "0.3" # Stream 工具（WebSocket）
+quick-xml = "0.37"  # XML 解析（企微消息）
+toml = "0.8"        # TOML 配置文件
+
+[profile.release]
+opt-level = "z"
+lto = true
+strip = true
+codegen-units = 1

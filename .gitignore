@@ -1,0 +1,12 @@
+/target
+.DS_Store
+.env
+data/core_memory.json
+data/memory/
+data/logs/
+data/vector_memory.json
+data/*.db
+data/*.db-shm
+data/*.db-wal
+data/screenshots/
+data/files/
