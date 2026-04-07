@@ -1,0 +1,38 @@
+[
+  {
+    "tool_name": "exec_command",
+    "tips": [
+      "避免在大目录执行 ls -R，可能产生巨量输出",
+      "使用 head/tail 限制输出行数",
+      "curl 请求注意超时设置，建议加 --max-time 10"
+    ]
+  },
+  {
+    "tool_name": "delegate_task",
+    "tips": [
+      "任务描述要清晰具体，包含所有必要上下文",
+      "子 Agent 无法访问父 Agent 的对话历史"
+    ]
+  },
+  {
+    "tool_name": "control_device",
+    "tips": [
+      "先查询设备状态再执行控制操作",
+      "批量控制时注意设备响应延迟"
+    ]
+  },
+  {
+    "tool_name": "analyze_image",
+    "tips": [
+      "支持 PNG/JPG/WEBP 格式",
+      "图片 URL 必须可公网访问，或使用本地文件路径"
+    ]
+  },
+  {
+    "tool_name": "get_weather",
+    "tips": [
+      "支持中文城市名和英文城市名",
+      "结果包含温度、湿度、天气状况"
+    ]
+  }
+]
